@@ -26,4 +26,17 @@ public class TestListExamples {
     IsMoon isMoon = new IsMoon();
     assertEquals(expectedResult, ListExamples.filter(input, isMoon));
   }
+
+  @Test 
+  public void testFilter1() {
+    List<String> input1 = Arrays.asList("sun", "moon", "star");
+    List<String> expected1 = Arrays.asList("moon");
+
+    List<String> input2 = Arrays.asList("sun", "moon", "moon", "star");
+    List<String> expected2 = Arrays.asList("moon", "moon");
+
+    IsMoon isMoon = new IsMoon();
+    assertEquals(expected1, ListExamples.filter(input1, isMoon));
+    assertEquals(expected2, ListExamples.filter(input2, isMoon));
+  }
 }
